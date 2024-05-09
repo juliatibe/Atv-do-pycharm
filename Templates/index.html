@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>numero inteiro</title>
+</head>
+<body>
+    <h1>Calcular numero inteiro</h1> <!-- cabeçalho -->
+        <form action="/resultado" method="post"> <!-- Este é o início de um formulário, quando aperta calcular, faz uma solicitação que é enviada para a rota -->
+            {% for i in range(10): %} <!-- para cada interação, ele gera um campo de entrada 10 vezes -->
+                <label for="numero{{i}}" >Informe um numero inteiro{{i}}:</label> <!-- como se fosse um rotulo -->
+                <input type="text" id="numero{{i}}" name="numero{{i}}" required> <!-- campo de entrada, para a pessoa digitar um numero, required torna obrigatório -->
+            {% endfor %}
+            <button type="submit">Calcular</button> <!--Este é o botão que o usuário clica para enviar o formulário. -->
+        </form>
+    <div id="resultado"> <!-- uma div, onde vai mostrar o resultado -->
+        <p> Maior:  {{maior}}</p>
+        <p> Menor: {{menor}}</p> <!-- exibir o numero inserido pelo usuário -->
+        <p> Média: {{media}}</p>
+    </div>
+</body>
+</html>
